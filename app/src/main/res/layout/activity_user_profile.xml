@@ -1,0 +1,182 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".activities.user.UserProfileActivity">
+
+    <androidx.appcompat.widget.Toolbar
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dimen_50dp"
+        android:background="@color/colorPrimary">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="left"
+
+            android:orientation="horizontal">
+
+            <ImageView
+                android:id="@+id/imgback"
+                android:layout_width="@dimen/dimen_50dp"
+                android:layout_height="@dimen/dimen_50dp"
+                android:layout_alignParentLeft="true"
+                android:padding="@dimen/dimen_10dp"
+                android:layout_centerVertical="true"
+                app:srcCompat="@drawable/ic_back"
+                />
+
+
+
+            <TextView
+
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:gravity="center"
+                android:text="Profile"
+                android:textColor="@android:color/white"
+                android:textSize="@dimen/dimen_18sp"
+                android:layout_marginLeft="@dimen/dimen_60dp"
+                android:fontFamily="@font/montserratregular"
+                android:layout_alignParentLeft="true"
+
+                android:layout_centerVertical="true"
+
+
+
+                />
+
+
+
+
+
+        </RelativeLayout>
+
+
+
+    </androidx.appcompat.widget.Toolbar>
+
+
+    <ImageView
+        android:id="@+id/imgProfile"
+        android:layout_width="@dimen/dimen_100dp"
+        android:layout_height="@dimen/dimen_100dp"
+        android:scaleType="centerCrop"
+        android:layout_gravity="center"
+
+        android:layout_margin="@dimen/dimen_10dp"
+        android:background="@drawable/drawable_round"
+        app:srcCompat="@drawable/ic_person"
+        />
+
+
+    <EditText android:id="@+id/input_name"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:inputType="textPersonName"
+        android:fontFamily="@font/montserratregular"
+        android:layout_margin="@dimen/dimen_10dp"
+        android:hint="Name" />
+
+
+    <!-- Address Label -->
+
+
+    <!--  Email Label -->
+
+    <EditText android:id="@+id/input_email"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:inputType="textEmailAddress"
+        android:fontFamily="@font/montserratregular"
+        android:layout_margin="@dimen/dimen_10dp"
+        android:hint="Email" />
+
+
+
+    <!-- mobile number -->
+
+    <EditText android:id="@+id/input_mobile"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:inputType="number"
+        android:layout_margin="@dimen/dimen_10dp"
+        android:fontFamily="@font/montserratregular"
+        android:hint="Mobile Number" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+
+        android:id="@+id/tvgender"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/dimen_10dp"
+        android:text="@string/tv_gender"
+        android:fontFamily="@font/montserratregular"
+        android:textColor="@color/colorPrimaryText"
+        />
+
+
+    <RadioGroup
+        android:id="@+id/rggender"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_marginTop="8dp"
+        android:backgroundTint="@color/colorAccent"
+        android:foregroundTint="@color/colorAccent"
+        android:orientation="horizontal"
+        android:weightSum="1"
+        android:layout_margin="@dimen/dimen_10dp"
+        tools:targetApi="lollipop">
+
+        <androidx.appcompat.widget.AppCompatRadioButton
+            android:id="@+id/radiomale"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight=".5"
+            android:backgroundTint="@color/black"
+            android:paddingLeft="0dp"
+            android:checked="true"
+            android:text="@string/tv_gender_male"
+            android:fontFamily="@font/montserratregular"
+            android:textColor="@color/black"
+            android:textColorHint="@color/black"
+            app:buttonTint="@color/black"
+
+            tools:targetApi="lollipop" />
+
+        <androidx.appcompat.widget.AppCompatRadioButton
+            android:id="@+id/radiofemale"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight=".5"
+            android:backgroundTint="@color/black"
+            android:text="@string/tv_gender_female"
+            android:fontFamily="@font/montserratregular"
+            android:textColor="@color/black"
+            android:textColorHint="@color/black"
+            app:buttonTint="@color/black"
+            tools:targetApi="lollipop" />
+    </RadioGroup>
+
+
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/btnUpdate"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:layout_marginBottom="24dp"
+        android:padding="12dp"
+        android:layout_margin="@dimen/dimen_10dp"
+        android:textAllCaps="false"
+        android:fontFamily="@font/montserratregular"
+        android:textColor="@android:color/white"
+        android:background="@drawable/drawable_btnbg"
+        android:text="Update"/>
+
+</LinearLayout>

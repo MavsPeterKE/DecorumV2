@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    >
+
+    <!-- TODO: Update blank fragment layout -->
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="0.2"
+         >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <TextView
+
+                android:id="@+id/txtTitle"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:paddingLeft="@dimen/dimen_10dp"
+                android:layout_margin="@dimen/dimen_10dp"
+                android:gravity="center"
+                android:textSize="@dimen/dimen_18sp"
+                android:fontFamily="@font/montserratsemibold"
+
+
+
+                android:text=""/>
+
+            <TextView
+                android:id="@+id/txtDtDelivery"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:paddingLeft="@dimen/dimen_10dp"
+                android:layout_margin="@dimen/dimen_10dp"
+                android:gravity="center"
+                android:textSize="@dimen/dimen_15sp"
+                android:fontFamily="@font/montserratregular"
+
+
+
+                />
+
+
+        </LinearLayout>
+
+    </ScrollView>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center"
+        android:layout_weight="0.8">
+
+
+        <Button
+            android:id="@+id/btn_ok"
+            android:layout_width="@dimen/dimen_150dp"
+            android:layout_height="@dimen/dimen_50dp"
+
+            android:layout_margin="@dimen/dimen_10dp"
+            android:fontFamily="@font/montserratregular"
+            android:background="@drawable/drawable_btnbg"
+            android:gravity="center"
+
+            android:textColor="@android:color/white"
+            android:textSize="@dimen/dimen_15sp"
+            android:text="Ok" />
+    </LinearLayout>
+
+</LinearLayout>

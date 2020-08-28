@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".activities.CartActivity">
+
+    <androidx.appcompat.widget.Toolbar
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dimen_50dp"
+        android:background="@color/colorPrimary">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="left"
+
+            android:orientation="horizontal">
+
+            <ImageView
+                android:id="@+id/imgback"
+                android:layout_width="@dimen/dimen_50dp"
+                android:layout_height="@dimen/dimen_50dp"
+                android:layout_alignParentLeft="true"
+                android:padding="@dimen/dimen_10dp"
+                android:layout_centerVertical="true"
+                app:srcCompat="@drawable/ic_back"
+                />
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal">
+
+                <TextView
+
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:gravity="center"
+                    android:text="Cart"
+                    android:layout_weight="0.4"
+                    android:textColor="@android:color/white"
+                    android:textSize="@dimen/dimen_18sp"
+
+                    android:fontFamily="@font/montserratregular"
+                    android:layout_alignParentLeft="true"
+
+                    android:layout_centerVertical="true"
+
+
+
+                    />
+
+
+
+
+
+
+            </LinearLayout>
+
+
+
+
+
+
+
+        </RelativeLayout>
+
+
+
+    </androidx.appcompat.widget.Toolbar>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recycler_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="0.15"/>
+
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="0.85">
+
+        <LinearLayout
+            android:id="@+id/layout_total"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal"
+            >
+
+            <TextView
+                android:id="@+id/txtNetTotal"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dimen_50dp"
+                android:gravity="center_vertical"
+                android:textSize="@dimen/dimen_15sp"
+                android:layout_marginLeft="@dimen/dimen_10dp"
+                android:text=""
+                android:layout_weight="0.3"
+                android:layout_gravity="center_vertical"
+                android:textStyle="bold"
+                android:textColor="@android:color/black"/>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="0.7">
+
+                <Button
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Check out"
+                    android:textAllCaps="false"
+                    android:textColor="@color/colorPrimary"
+                    android:textSize="@dimen/dimen_15sp"
+                    android:textStyle="bold"
+                    android:layout_gravity="center_vertical"
+                    android:background="@android:color/transparent"
+                    android:id="@+id/btnCheckOut"/>
+
+
+
+
+            </LinearLayout>
+
+        </LinearLayout>
+    </androidx.cardview.widget.CardView>
+
+</LinearLayout>
