@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:background="@color/colorPrimary">
+        <com.ctrlplusz.anytextview.AnyTextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="40dp"
+            android:text="@string/start_home_deco"
+            android:textSize="20sp"
+            android:layout_marginLeft="20dp"
+            android:textColor="@color/transluscent_white"
+            android:layout_marginBottom="5dp"
+            app:typeface="FontsFree-Net-SFProText-Bold.ttf" />
+
+        <com.ctrlplusz.anytextview.AnyTextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:layout_marginLeft="20dp"
+            android:text="@string/start_home_deco_cont"
+            android:textSize="18sp"
+            android:textColor="@color/white"
+            android:layout_marginBottom="5dp"
+            app:typeface="FontsFree-Net-SFProText-Bold.ttf" />
+
+        <Button
+            android:id="@+id/btlogin"
+            android:layout_width="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="20dp"
+            android:layout_height="wrap_content"
+            android:padding="10dp"
+            android:layout_marginLeft="20dp"
+            android:textAllCaps="false"
+            android:layout_marginRight="20dp"
+            android:background="@drawable/rounded_shape"
+            android:textColor="@color/white"
+            android:layout_marginBottom="20dp"
+            android:text="@string/have_account" />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="20dp"
+            android:orientation="vertical"
+            android:background="@drawable/rounded_one_corner">
+
+            <EditText
+                android:id="@+id/edEmail"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:hint="Email"
+                android:layout_marginTop="20dp"
+                android:layout_marginRight="20dp"
+                android:layout_marginLeft="20dp"
+                android:padding="10dp"
+                android:inputType="textEmailAddress" />
+
+            <EditText
+                android:id="@+id/edUserName"
+                android:layout_width="match_parent"
+                android:layout_marginTop="10dp"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:padding="10dp"
+                android:layout_marginRight="20dp"
+                android:layout_marginLeft="20dp"
+                android:inputType="textPersonName"
+                android:hint="Username" />
+
+            <EditText
+                android:id="@+id/edPassword"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:layout_marginRight="20dp"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="10dp"
+                android:padding="10dp"
+                android:hint="Password"
+                android:inputType="textPassword" />
+
+            <RelativeLayout
+                android:id="@+id/btstart"
+                android:layout_width="match_parent"
+                android:orientation="horizontal"
+                android:background="@drawable/rounded_shape"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginEnd="20dp"
+                android:layout_height="50dp">
+                <TextView
+                    android:id="@+id/headertext"
+                    android:layout_width="wrap_content"
+                    android:text="@string/get_started"
+                    android:textColor="@color/white"
+                   android:layout_centerVertical="true"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginLeft="20dp"
+                    android:layout_height="wrap_content" />
+
+                <ImageView
+                    android:id="@+id/imageView2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:layout_toRightOf="@id/headertext"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="10dp"
+                    app:srcCompat="@drawable/next_arrow" />
+            </RelativeLayout>
+
+        </LinearLayout>
+    </LinearLayout>
+
+</layout>
