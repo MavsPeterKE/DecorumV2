@@ -1,58 +1,25 @@
-package com.rapid.furnitureaugmentreal.activities;
+package com.rapid.Decorum.activities;
 
 import android.Manifest;
-import android.app.Activity;
+import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.content.pm.PackageManager;
-import android.graphics.Bitmap;
-import android.graphics.BitmapFactory;
 
-import android.graphics.Color;
-import android.graphics.Point;
+import android.content.pm.PackageManager.NameNotFoundException;
 import android.hardware.Camera;
 import android.net.Uri;
-import android.os.Build;
 import android.os.Bundle;
 
 import com.bumptech.glide.Glide;
 import com.bumptech.glide.request.RequestOptions;
-import com.bumptech.glide.request.target.SimpleTarget;
-import com.bumptech.glide.request.transition.Transition;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
-import com.google.android.material.bottomsheet.BottomSheetDialog;
-import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.navigation.NavigationView;
-import com.google.ar.core.Anchor;
-import com.google.ar.core.ArCoreApk;
-import com.google.ar.core.AugmentedImage;
-import com.google.ar.core.AugmentedImageDatabase;
-import com.google.ar.core.Config;
-import com.google.ar.core.Frame;
 
-import com.google.ar.core.HitResult;
-import com.google.ar.core.Plane;
-import com.google.ar.core.Session;
-import com.google.ar.core.Trackable;
-import com.google.ar.core.TrackingState;
-import com.google.ar.core.exceptions.UnavailableApkTooOldException;
-import com.google.ar.core.exceptions.UnavailableArcoreNotInstalledException;
-import com.google.ar.core.exceptions.UnavailableDeviceNotCompatibleException;
-import com.google.ar.core.exceptions.UnavailableSdkTooOldException;
-import com.google.ar.sceneform.AnchorNode;
-import com.google.ar.sceneform.FrameTime;
-import com.google.ar.sceneform.Scene;
-import com.google.ar.sceneform.math.Vector3;
-import com.google.ar.sceneform.rendering.FixedHeightViewSizer;
-import com.google.ar.sceneform.rendering.MaterialFactory;
 import com.google.ar.sceneform.rendering.ModelRenderable;
-import com.google.ar.sceneform.rendering.Renderable;
-import com.google.ar.sceneform.rendering.ShapeFactory;
 import com.google.ar.sceneform.rendering.ViewRenderable;
-import com.google.ar.sceneform.ux.ArFragment;
-import com.google.ar.sceneform.ux.BaseArFragment;
-import com.google.ar.sceneform.ux.TransformableNode;
 import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.EventListener;
 import com.google.firebase.firestore.FirebaseFirestore;
@@ -62,25 +29,18 @@ import com.google.firebase.firestore.QuerySnapshot;
 import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.StorageReference;
 import com.otaliastudios.zoom.ZoomLayout;
-import com.rapid.furnitureaugmentreal.CustomArFragment;
-import com.rapid.furnitureaugmentreal.R;
+import com.rapid.Decorum.R;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
-import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.appcompat.widget.Toolbar;
-import androidx.core.app.ActivityCompat;
 import androidx.core.content.ContextCompat;
 import androidx.core.view.GravityCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import android.os.Handler;
-import android.util.Log;
-import android.view.Gravity;
 import android.view.MenuItem;
 import android.view.MotionEvent;
 import android.view.ScaleGestureDetector;
@@ -89,39 +49,20 @@ import android.view.SurfaceView;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
-import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import java.io.IOException;
-import java.io.InputStream;
 import java.util.ArrayList;
-import java.util.Collection;
 import java.util.List;
 import java.util.Map;
-import java.util.function.Consumer;
-import java.util.function.Function;
 
-import com.google.ar.core.Anchor;
-import com.google.ar.core.Frame;
-import com.google.ar.core.HitResult;
-import com.google.ar.core.Plane;
-import com.google.ar.core.Trackable;
-import com.google.ar.sceneform.AnchorNode;
-import com.google.ar.sceneform.rendering.ModelRenderable;
-import com.google.ar.sceneform.ux.ArFragment;
-import com.google.ar.sceneform.ux.TransformableNode;
-import com.rapid.furnitureaugmentreal.TermsandConditionsFragment;
-import com.rapid.furnitureaugmentreal.adapter.FurnitureAdapter;
-import com.rapid.furnitureaugmentreal.appConstants.AppConstants;
-import com.rapid.furnitureaugmentreal.domain.Furniture;
-import com.rapid.furnitureaugmentreal.preferencehelper.PreferenceHelper;
-import com.rapid.furnitureaugmentreal.progress.ProgressFragment;
-
-
-import java.util.List;
-import java.util.function.Consumer;
-import java.util.function.Function;
+import com.rapid.Decorum.TermsandConditionsFragment;
+import com.rapid.Decorum.adapter.FurnitureAdapter;
+import com.rapid.Decorum.appConstants.AppConstants;
+import com.rapid.Decorum.domain.Furniture;
+import com.rapid.Decorum.preferencehelper.PreferenceHelper;
+import com.rapid.Decorum.progress.ProgressFragment;
 
 public class MainActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener, SurfaceHolder.Callback {
 
@@ -187,6 +128,16 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         setContentView(R.layout.layout_main);
         imgchair=findViewById(R.id.imgchair);
         viewRenderables=new ArrayList<>();
+        Context context;
+        try {
+             context = createPackageContext(" com.example.android.DecorumM", 0);
+            SharedPreferences pref = context.getSharedPreferences(
+                    "demopref", Context.MODE_PRIVATE);
+            String data = pref.getString("demostring", "No Value");
+        } catch (NameNotFoundException e) {
+            e.printStackTrace();
+        }
+
 
 
         imgcart=findViewById(R.id.imgcart);
@@ -204,7 +155,6 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         imgbench=findViewById(R.id.imgbench);
         imgdesk=findViewById(R.id.imgdesk);
         imgcup=findViewById(R.id.imgcup);
-
         imginfo=findViewById(R.id.imginfo);
         imglogout=findViewById(R.id.imglogout);
         imgUser=findViewById(R.id.imgUser);
@@ -461,47 +411,46 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         progressFragment = new ProgressFragment();
         progressFragment.show(getSupportFragmentManager(), "dkdskksd");
 
-        firebaseFirestore.collection("Furniture").get().addOnSuccessListener(MainActivity.this, new OnSuccessListener<QuerySnapshot>() {
-            @Override
-            public void onSuccess(QuerySnapshot queryDocumentSnapshots) {
-                progressFragment.dismiss();
+        firebaseFirestore.collection("Furniture").get().addOnSuccessListener(MainActivity.this, queryDocumentSnapshots -> {
+            progressFragment.dismiss();
 
-                foodmenus = new ArrayList<>();
+            foodmenus = new ArrayList<>();
 
 
-                for (QueryDocumentSnapshot document : queryDocumentSnapshots) {
+            for (QueryDocumentSnapshot document : queryDocumentSnapshots) {
 
+                Map<String, Object> logindata = document.getData();
 
-                    Map<String, Object> logindata = document.getData();
+                Furniture foodmenu = new Furniture();
+                foodmenu.setId(document.getId());
+                foodmenu.setImage(logindata.get("image").toString());
+                foodmenu.setDescription(logindata.get("description").toString());
+                foodmenu.setName(logindata.get("name").toString());
+                foodmenu.setPrice(logindata.get("price").toString());
+                foodmenus.add(foodmenu);
 
-                    Furniture foodmenu = new Furniture();
-                    foodmenu.setId(document.getId());
-                    foodmenu.setImage(logindata.get("image").toString());
-                    foodmenu.setDescription(logindata.get("description").toString());
-                    foodmenu.setName(logindata.get("name").toString());
-                    foodmenu.setPrice(logindata.get("price").toString());
-                    foodmenus.add(foodmenu);
-
-
-
-                }
-
-
-                if (foodmenus.size() > 0) {
-                    foodmenus.get(0).setSelected(1);
-                    selectedposition=0;
-
-                   // selected_furniture = foodmenus.get(selectedposition);
-                    FurnitureAdapter hotelListAdapter = new FurnitureAdapter(MainActivity.this, foodmenus);
-                    recycler_view.setLayoutManager(new LinearLayoutManager(MainActivity.this, RecyclerView.HORIZONTAL, false));
-                    recycler_view.setAdapter(hotelListAdapter);
-                } else {
-
-                    Toast.makeText(MainActivity.this, "No food items", Toast.LENGTH_SHORT).show();
-                }
 
 
             }
+
+
+            if (foodmenus.size() > 0) {
+                foodmenus.get(0).setSelected(1);
+                selectedposition=0;
+
+               // selected_furniture = foodmenus.get(selectedposition);
+                FurnitureAdapter hotelListAdapter = new FurnitureAdapter(MainActivity.this, foodmenus);
+                recycler_view.setLayoutManager(new LinearLayoutManager(MainActivity.this, RecyclerView.HORIZONTAL, false));
+                recycler_view.setAdapter(hotelListAdapter);
+
+                // TODO: 2/4/21 Add method to check recieved item
+
+            } else {
+
+                Toast.makeText(MainActivity.this, "No food items", Toast.LENGTH_SHORT).show();
+            }
+
+
         }).addOnFailureListener(MainActivity.this, new OnFailureListener() {
             @Override
             public void onFailure(@NonNull Exception e) {
@@ -518,12 +467,6 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 
     public void getFurniture_details(Furniture furniture,int pos)
     {
-//        TransformableNode transformableNode = new TransformableNode(arFragment.getTransformationSystem());
-//        transformableNode.setParent(anchorNode);
-//        transformableNode.setRenderable(cotrenderable);
-//        transformableNode.select();
-
-
             selectedposition = pos;
 
             selected_furniture = furniture;
@@ -531,17 +474,8 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         storageRef.child(furniture.getImage()).getDownloadUrl().addOnSuccessListener(MainActivity.this, new OnSuccessListener<Uri>() {
             @Override
             public void onSuccess(Uri uri) {
-
-
                 String url = uri.toString();
-
-
-
                 Glide.with(MainActivity.this).asBitmap().load(url).apply(RequestOptions.placeholderOf(R.drawable.ic_placeholder)).into(commonimg);
-
-                // updateUserImage();
-
-                //Toast.makeText(UserProfileActivity.this,url,Toast.LENGTH_SHORT).show();
             }
         });
 
@@ -621,23 +555,14 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         switch (menuItem.getItemId())
         {
 
-
-
-            case R.id.nav_shopping:
-              //  startActivity(new Intent(MainActivity.this, ShoppingActivity.class));
-
-                break;
-
-            case R.id.nav_details:
-                startActivity(new Intent(MainActivity.this, OrdersActivity.class));
-               // showDialogFragment(selected);
-
-
+            case R.id.nav_text_ml:
+                Context ctx=this; // or you can replace **'this'** with your **ActivityName.this**
+                Intent i = ctx.getPackageManager().getLaunchIntentForPackage("com.example.android.firstmlapp");
+                ctx.startActivity(i);
                 break;
 
 
             case R.id.nav_logout:
-
                 AlertDialog.Builder builder=new AlertDialog.Builder(MainActivity.this);
                 builder.setTitle("Tour management");
                 builder.setMessage("Do you want to logoutnow ?");
@@ -648,7 +573,6 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                         dialog.dismiss();
                         new PreferenceHelper(MainActivity.this).clearData();
                         Intent intent=new Intent(MainActivity.this, LoginActivity.class);
-
                         intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
                         startActivity(intent);
 

@@ -65,7 +65,7 @@
                             android:ems="10"
                             android:layout_marginTop="5dp"
                             android:background="@drawable/rectangular"
-                            android:inputType="textPersonName"
+                            android:inputType="textPassword"
                             android:hint="@string/password" />
 
                         <Button

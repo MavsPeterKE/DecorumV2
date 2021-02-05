@@ -1,4 +1,4 @@
-package com.rapid.furnitureaugmentreal.activities;
+package com.rapid.Decorum.activities;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -14,16 +14,14 @@ import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.FirebaseFirestore;
-import com.rapid.furnitureaugmentreal.R;
-import com.rapid.furnitureaugmentreal.appConstants.AppConstants;
-import com.rapid.furnitureaugmentreal.domain.UserAddress;
-import com.rapid.furnitureaugmentreal.preferencehelper.PreferenceHelper;
-import com.rapid.furnitureaugmentreal.progress.ProgressFragment;
+import com.rapid.Decorum.R;
+import com.rapid.Decorum.appConstants.AppConstants;
+import com.rapid.Decorum.domain.UserAddress;
+import com.rapid.Decorum.preferencehelper.PreferenceHelper;
+import com.rapid.Decorum.progress.ProgressFragment;
 
 import java.util.HashMap;
 import java.util.Map;
-
-import io.opencensus.internal.Utils;
 
 public class AddAddressActivity extends AppCompatActivity {
 

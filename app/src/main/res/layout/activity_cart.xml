@@ -119,6 +119,7 @@
                     android:textColor="@color/colorPrimary"
                     android:textSize="@dimen/dimen_15sp"
                     android:textStyle="bold"
+                    android:visibility="gone"
                     android:layout_gravity="center_vertical"
                     android:background="@android:color/transparent"
                     android:id="@+id/btnCheckOut"/>

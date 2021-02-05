@@ -1,4 +1,4 @@
-package com.rapid.furnitureaugmentreal.activities;
+package com.rapid.Decorum.activities;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -31,10 +31,10 @@ import com.google.firebase.firestore.FirebaseFirestoreException;
 import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.StorageReference;
 import com.google.firebase.storage.UploadTask;
-import com.rapid.furnitureaugmentreal.R;
-import com.rapid.furnitureaugmentreal.appConstants.AppConstants;
-import com.rapid.furnitureaugmentreal.preferencehelper.PreferenceHelper;
-import com.rapid.furnitureaugmentreal.progress.ProgressFragment;
+import com.rapid.Decorum.R;
+import com.rapid.Decorum.appConstants.AppConstants;
+import com.rapid.Decorum.preferencehelper.PreferenceHelper;
+import com.rapid.Decorum.progress.ProgressFragment;
 
 import java.io.File;
 import java.io.FileInputStream;

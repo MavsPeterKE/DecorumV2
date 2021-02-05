@@ -1,8 +1,7 @@
-package com.rapid.furnitureaugmentreal.adapter;
+package com.rapid.Decorum.adapter;
 
 import android.app.Activity;
 import android.content.Context;
-import android.content.Intent;
 import android.graphics.Color;
 import android.net.Uri;
 import android.view.LayoutInflater;
@@ -20,10 +19,9 @@ import com.bumptech.glide.request.RequestOptions;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.StorageReference;
-import com.rapid.furnitureaugmentreal.R;
-import com.rapid.furnitureaugmentreal.activities.FurnituredetailsActivity;
-import com.rapid.furnitureaugmentreal.activities.MainActivity;
-import com.rapid.furnitureaugmentreal.domain.Furniture;
+import com.rapid.Decorum.R;
+import com.rapid.Decorum.activities.MainActivity;
+import com.rapid.Decorum.domain.Furniture;
 
 import java.util.List;
 

@@ -1,4 +1,4 @@
-package com.rapid.furnitureaugmentreal.app;
+package com.rapid.Decorum.app;
 
 import androidx.multidex.MultiDexApplication;
 

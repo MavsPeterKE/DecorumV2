@@ -1,4 +1,4 @@
-package com.rapid.furnitureaugmentreal.preferencehelper;
+package com.rapid.Decorum.preferencehelper;
 
 import android.content.Context;
 import android.content.SharedPreferences;

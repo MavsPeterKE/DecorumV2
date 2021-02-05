@@ -1,4 +1,4 @@
-package com.rapid.furnitureaugmentreal.progress;
+package com.rapid.Decorum.progress;
 
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -9,7 +9,7 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.DialogFragment;
 
-import com.rapid.furnitureaugmentreal.R;
+import com.rapid.Decorum.R;
 
 
 public class ProgressFragment extends DialogFragment {

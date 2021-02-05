@@ -14,14 +14,13 @@ import androidx.annotation.RequiresApi;
 import androidx.annotation.StringRes;
 import androidx.fragment.app.Fragment;
 
-import com.example.decorum.R;
+import com.rapid.Decorum.R;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
 
 /**
  * A simple {@link Fragment} subclass.
- * Use the {@link com.example.decorum.views.fragments.SliderItemFragment#newInstance} factory method to
  * create an instance of this fragment.
  */
 public class SliderItemFragment extends Fragment {
@@ -42,7 +41,7 @@ public class SliderItemFragment extends Fragment {
     @StringRes
     private static final int[] PAGE_IMAGE =
             new int[]{
-                    0, 0,0,0
+                    0, 0, 0, 0
             };
 
     // prepare all background images arrays
@@ -65,8 +64,8 @@ public class SliderItemFragment extends Fragment {
      * @param position Parameter 1.
      * @return A new instance of fragment SliderItemFragment.
      */
-    public static com.example.decorum.views.fragments.SliderItemFragment newInstance(int position) {
-        com.example.decorum.views.fragments.SliderItemFragment fragment = new com.example.decorum.views.fragments.SliderItemFragment();
+    public static SliderItemFragment newInstance(int position) {
+        SliderItemFragment fragment = new SliderItemFragment();
         Bundle args = new Bundle();
         args.putInt(ARG_POSITION, position);
         fragment.setArguments(args);

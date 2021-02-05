@@ -4,20 +4,11 @@
     tools:showIn="navigation_view">
 
     <group android:checkableBehavior="single">
-        <item
-            android:id="@+id/nav_shopping"
-            android:icon="@drawable/ic_shopping_basket_black_24dp"
-            android:title="shopping" />
-        <item
-            android:id="@+id/nav_details"
-            android:icon="@drawable/ic_assignment_black_24dp"
 
-            android:title="Order Details" />
-
-<!--        <item-->
-<!--            android:id="@+id/nav_furniturear"-->
-<!--            android:icon="@drawable/ic_photo_camera"-->
-<!--            android:title="Augument reality" />-->
+        <item
+            android:id="@+id/nav_text_ml"
+            android:icon="@drawable/ic_exit"
+            android:title="Image Recognition" />
 
 
         <item

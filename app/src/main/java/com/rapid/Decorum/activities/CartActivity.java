@@ -1,4 +1,4 @@
-package com.rapid.furnitureaugmentreal.activities;
+package com.rapid.Decorum.activities;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -24,12 +24,12 @@ import com.google.firebase.firestore.QueryDocumentSnapshot;
 import com.google.firebase.firestore.QuerySnapshot;
 import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.StorageReference;
-import com.rapid.furnitureaugmentreal.R;
-import com.rapid.furnitureaugmentreal.adapter.CartAdapter;
-import com.rapid.furnitureaugmentreal.appConstants.AppConstants;
-import com.rapid.furnitureaugmentreal.domain.Cart;
-import com.rapid.furnitureaugmentreal.domain.Furniture;
-import com.rapid.furnitureaugmentreal.preferencehelper.PreferenceHelper;
+import com.rapid.Decorum.R;
+import com.rapid.Decorum.adapter.CartAdapter;
+import com.rapid.Decorum.appConstants.AppConstants;
+import com.rapid.Decorum.domain.Cart;
+import com.rapid.Decorum.domain.Furniture;
+import com.rapid.Decorum.preferencehelper.PreferenceHelper;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -129,7 +129,7 @@ public class CartActivity extends AppCompatActivity {
                                     double price = Double.parseDouble(logindata.get("price").toString()) * qty;
 
                                     totalprice=totalprice+price;
-                                    txtNetTotal.setText("Total Price:"+totalprice+" Rs");
+                                    txtNetTotal.setText("Total Price: Ksh."+totalprice);
 
 //                holder.txtHotelname.setText(logindata.get("name").toString());
 

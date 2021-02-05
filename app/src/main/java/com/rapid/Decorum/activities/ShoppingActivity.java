@@ -1,4 +1,4 @@
-package com.rapid.furnitureaugmentreal.activities;
+package com.rapid.Decorum.activities;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -35,12 +35,12 @@ import com.google.firebase.firestore.QueryDocumentSnapshot;
 import com.google.firebase.firestore.QuerySnapshot;
 import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.StorageReference;
-import com.rapid.furnitureaugmentreal.R;
-import com.rapid.furnitureaugmentreal.adapter.FurnitureAdapter;
-import com.rapid.furnitureaugmentreal.appConstants.AppConstants;
-import com.rapid.furnitureaugmentreal.domain.Furniture;
-import com.rapid.furnitureaugmentreal.preferencehelper.PreferenceHelper;
-import com.rapid.furnitureaugmentreal.progress.ProgressFragment;
+import com.rapid.Decorum.R;
+import com.rapid.Decorum.adapter.FurnitureAdapter;
+import com.rapid.Decorum.appConstants.AppConstants;
+import com.rapid.Decorum.domain.Furniture;
+import com.rapid.Decorum.preferencehelper.PreferenceHelper;
+import com.rapid.Decorum.progress.ProgressFragment;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -200,23 +200,6 @@ public class ShoppingActivity extends AppCompatActivity implements NavigationVie
 
         switch (menuItem.getItemId())
         {
-
-
-
-            case R.id.nav_details:
-                startActivity(new Intent(ShoppingActivity.this,OrdersActivity.class));
-
-                break;
-
-//            case R.id.nav_furniturear:
-//                //startActivity(new Intent(MainActivity.this, FoodOrderActivity.class));
-//
-//                startActivity(new Intent(ShoppingActivity.this, MainActivity.class));
-//
-//
-//                break;
-
-
             case R.id.nav_logout:
 
                 AlertDialog.Builder builder=new AlertDialog.Builder(ShoppingActivity.this);

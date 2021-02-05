@@ -1,6 +1,8 @@
 package com.rapid.Decorum.activities;
 
+import android.Manifest;
 import android.content.Intent;
+import android.content.pm.PackageManager;
 import android.graphics.Color;
 import android.os.Build;
 import android.os.Bundle;
@@ -10,13 +12,18 @@ import android.view.Window;
 import android.view.WindowManager;
 import android.widget.Button;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.app.ActivityCompat;
+import androidx.core.content.ContextCompat;
 import androidx.fragment.app.FragmentPagerAdapter;
 import androidx.viewpager.widget.ViewPager;
 
-import com.example.decorum.R;
-import com.example.decorum.views.adapters.SliderPagerAdapter;
 import com.google.android.material.tabs.TabLayout;
+import com.rapid.Decorum.R;
+import com.rapid.Decorum.adapter.SliderPagerAdapter;
+import com.rapid.Decorum.appConstants.AppConstants;
+import com.rapid.Decorum.preferencehelper.PreferenceHelper;
 
 public class GettingStartedActivity extends AppCompatActivity {
     private ViewPager viewPager;
@@ -54,12 +61,13 @@ public class GettingStartedActivity extends AppCompatActivity {
         changeStatusBarColor();
 
         button.setOnClickListener(new View.OnClickListener() {
-            @Override public void onClick(View view) {
+            @Override
+            public void onClick(View view) {
                 int currentItemCount = viewPager.getCurrentItem();
-                if ( currentItemCount< adapter.getCount()) {
+                if (currentItemCount < adapter.getCount()) {
                     viewPager.setCurrentItem(viewPager.getCurrentItem() + 1);
-                    Log.e( "onClick: ",currentItemCount+"" );
-                    if (currentItemCount==3){
+                    Log.e("onClick: ", currentItemCount + "");
+                    if (currentItemCount == 3) {
                         startLoginActivity();
                     }
                 }
@@ -76,7 +84,8 @@ public class GettingStartedActivity extends AppCompatActivity {
 
             }
 
-            @Override public void onPageSelected(int position) {
+            @Override
+            public void onPageSelected(int position) {
                 if (position == adapter.getCount() - 1) {
                     button.setText(R.string.get_started);
                     startLoginActivity();
@@ -85,14 +94,31 @@ public class GettingStartedActivity extends AppCompatActivity {
                 }
             }
 
-            @Override public void onPageScrollStateChanged(int state) {
+            @Override
+            public void onPageScrollStateChanged(int state) {
 
             }
         });
     }
 
     private void startLoginActivity() {
-        startActivity(new Intent(com.example.decorum.views.activities.GettingStartedActivity.this,LoginActivity.class));
+        if (ContextCompat.checkSelfPermission(GettingStartedActivity.this, Manifest.permission.CAMERA) == PackageManager.PERMISSION_GRANTED) {
+            startDeco();
+        } else {
+            ActivityCompat.requestPermissions(GettingStartedActivity.this, new String[]{Manifest.permission.CAMERA}, 11);
+        }
+
+    }
+
+
+    private void startDeco() {
+        if (new PreferenceHelper(GettingStartedActivity.this).getData(AppConstants.Userid).equalsIgnoreCase("")) {
+
+            startActivity(new Intent(GettingStartedActivity.this, LoginActivity.class));
+        } else {
+
+            startActivity(new Intent(GettingStartedActivity.this, MainActivity.class));
+        }
     }
 
     private void changeStatusBarColor() {
@@ -100,6 +126,18 @@ public class GettingStartedActivity extends AppCompatActivity {
             Window window = getWindow();
             window.addFlags(WindowManager.LayoutParams.FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS);
             window.setStatusBarColor(Color.TRANSPARENT);
+        }
+    }
+
+    @Override
+    public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
+        super.onRequestPermissionsResult(requestCode, permissions, grantResults);
+        //super.onRequestPermissionsResult(requestCode, permissions, grantResults);
+        if (ContextCompat.checkSelfPermission(GettingStartedActivity.this, Manifest.permission.CAMERA) == PackageManager.PERMISSION_GRANTED) {
+            startDeco();
+        } else {
+
+            ActivityCompat.requestPermissions(GettingStartedActivity.this, new String[]{Manifest.permission.CAMERA}, 11);
         }
     }
 }

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="colorPrimary">#909396</color>
-    <color name="colorPrimaryDark">#909396</color>
+    <color name="colorPrimary">#a16c33</color>
+    <color name="colorPrimaryDark">#cb7e1f</color>
     <color name="colorAccent">#ff6b6b</color>
     <color name="primary_light">#FFCDD2</color>
     <!--<color name="accent">#FF5252</color>-->
@@ -16,6 +16,7 @@
     <color name="primary_darker">#CC1D1D</color>
     <color name="accent">#FFFFFF</color>
 
+
     <color name="black">#000000</color>
     <color name="jet">#222222</color>
     <color name="oil">#333333</color>
@@ -26,6 +27,7 @@
     <color name="iron">#CCCCCC</color>
     <color name="white">#FFFFFF</color>
     <color name="ash">#ECEAEA</color>
+    <color name="transluscent_white">#B6FFFFFF</color>
 
 
 </resources>

@@ -1,4 +1,4 @@
-package com.rapid.furnitureaugmentreal.adapter;
+package com.rapid.Decorum.adapter;
 
 import android.app.AlertDialog;
 import android.content.Context;
@@ -21,16 +21,13 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.firestore.FirebaseFirestore;
-import com.google.firebase.firestore.auth.User;
-import com.rapid.furnitureaugmentreal.R;
-import com.rapid.furnitureaugmentreal.activities.AddAddressActivity;
-import com.rapid.furnitureaugmentreal.activities.AddressActivity;
-import com.rapid.furnitureaugmentreal.domain.UserAddress;
-import com.rapid.furnitureaugmentreal.progress.ProgressFragment;
+import com.rapid.Decorum.R;
+import com.rapid.Decorum.activities.AddAddressActivity;
+import com.rapid.Decorum.activities.AddressActivity;
+import com.rapid.Decorum.domain.UserAddress;
+import com.rapid.Decorum.progress.ProgressFragment;
 
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
 
 public class UserAddressAdapter extends RecyclerView.Adapter<UserAddressAdapter.UserAddressHolder> {
 

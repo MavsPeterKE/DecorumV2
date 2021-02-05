@@ -1,4 +1,4 @@
-package com.rapid.furnitureaugmentreal.activities;
+package com.rapid.Decorum.activities;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -17,10 +17,10 @@ import com.google.android.gms.tasks.Task;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.QueryDocumentSnapshot;
 import com.google.firebase.firestore.QuerySnapshot;
-import com.rapid.furnitureaugmentreal.R;
-import com.rapid.furnitureaugmentreal.appConstants.AppConstants;
-import com.rapid.furnitureaugmentreal.preferencehelper.PreferenceHelper;
-import com.rapid.furnitureaugmentreal.progress.ProgressFragment;
+import com.rapid.Decorum.R;
+import com.rapid.Decorum.appConstants.AppConstants;
+import com.rapid.Decorum.preferencehelper.PreferenceHelper;
+import com.rapid.Decorum.progress.ProgressFragment;
 
 import java.util.Map;
 
@@ -37,11 +37,11 @@ public class LoginActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
-        link_signup=findViewById(R.id.link_signup);
-        btn_login=findViewById(R.id.btn_login);
-        input_email=findViewById(R.id.input_email);
-        input_password=findViewById(R.id.input_password);
-        link_password=findViewById(R.id.link_password);
+        link_signup=findViewById(R.id.tvSignUp);
+        btn_login=findViewById(R.id.btLogin);
+        input_email=findViewById(R.id.edUserName);
+        input_password=findViewById(R.id.edPassword);
+        link_password=findViewById(R.id.tvForgotPass);
 
 
         link_signup.setOnClickListener(new View.OnClickListener() {
@@ -67,10 +67,7 @@ public class LoginActivity extends AppCompatActivity {
                 {
                     if(!input_password.getText().toString().equals(""))
                     {
-
                         login();
-
-
                     }
                     else {
                         Toast.makeText(LoginActivity.this,"enter password",Toast.LENGTH_SHORT).show();

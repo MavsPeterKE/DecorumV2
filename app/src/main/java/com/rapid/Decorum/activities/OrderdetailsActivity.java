@@ -1,9 +1,8 @@
-package com.rapid.furnitureaugmentreal.activities;
+package com.rapid.Decorum.activities;
 
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
-import android.app.Activity;
 import android.net.Uri;
 import android.os.Bundle;
 import android.widget.Button;
@@ -19,8 +18,8 @@ import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.FirebaseFirestoreException;
 import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.StorageReference;
-import com.rapid.furnitureaugmentreal.R;
-import com.rapid.furnitureaugmentreal.domain.Orders;
+import com.rapid.Decorum.R;
+import com.rapid.Decorum.domain.Orders;
 
 import java.util.Map;
 

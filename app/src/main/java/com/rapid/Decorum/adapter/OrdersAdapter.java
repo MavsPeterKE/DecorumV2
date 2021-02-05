@@ -1,4 +1,4 @@
-package com.rapid.furnitureaugmentreal.adapter;
+package com.rapid.Decorum.adapter;
 
 import android.app.Activity;
 import android.content.Context;
@@ -25,10 +25,9 @@ import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.FirebaseFirestoreException;
 import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.StorageReference;
-import com.rapid.furnitureaugmentreal.R;
-import com.rapid.furnitureaugmentreal.activities.OrderdetailsActivity;
-import com.rapid.furnitureaugmentreal.activities.OrdersActivity;
-import com.rapid.furnitureaugmentreal.domain.Orders;
+import com.rapid.Decorum.R;
+import com.rapid.Decorum.activities.OrderdetailsActivity;
+import com.rapid.Decorum.domain.Orders;
 
 import java.util.List;
 import java.util.Map;

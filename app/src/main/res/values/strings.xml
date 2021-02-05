@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Virtual Furniture</string>
+    <string name="app_name">Decorum Furniture</string>
 
 
     <string name="reg_text">Registration</string>
@@ -89,4 +89,27 @@
 
     <string name="termsuser">In this tutorial we will see how to calculate the number of days between two dates. Program to find the number of Days between two Dates In this program.</string>
     <string name="title_activity_main">MainActivity</string>
+
+    <string name="username_hint">Username</string>
+    <string name="password">Password</string>
+    <string name="new_Account">NEW ACCOUNT</string>
+    <string name="forgot_password">Forgot your password?</string>
+    <string name="login">Login</string>
+    <string name="no_account">Dont have an account? <b>Sign Up</b></string>
+    <string name="start_home_deco">Start Decorating Your</string>
+    <string name="start_home_deco_cont"><b>Home With Us</b></string>
+    <string name="have_account">Already have an account? <b>Log in</b></string>
+
+    <string name="discover_living_room">Design</string>
+    <string name="kitchen_title">Your Ideal Kitchen</string>
+    <string name="office">Home Office</string>
+    <string name="relax_room">Bedroom</string>
+    <string name="discover_text">Your Sitting Room Perfectly</string>
+    <string name="kitchen_text">Get every kitchen need set up </string>
+    <string name="office_text">Customized and Nicely set up</string>
+    <string name="rewards_text">Start Now</string>
+    <string name="get_started">Get Started</string>
+    <string name="bedroom">Bedroom</string>
+    <string name="next">Next</string>
+
 </resources>

@@ -1,4 +1,4 @@
-package com.rapid.furnitureaugmentreal.domain;
+package com.rapid.Decorum.domain;
 
 import java.io.Serializable;
 

@@ -57,6 +57,28 @@ dependencies {
 
     implementation "androidx.preference:preference:1.0.0"
 
+    //Java 8 Lightweight Stream API
+    implementation 'com.annimon:stream:1.2.1'
+
+    implementation 'com.google.android.material:material:1.0.0-rc01'
+
+    //
+    //circle imageview
+    implementation 'de.hdodenhof:circleimageview:3.1.0'
+    //curve bg
+    implementation 'com.github.florent37:shapeofview:1.4.7'
+
+    implementation "androidx.constraintlayout:constraintlayout:2.0.0-beta6"
+
+    /* Butter knife Binding Library for initializes ui components*/
+    implementation 'com.jakewharton:butterknife:10.1.0'
+    annotationProcessor 'com.jakewharton:butterknife-compiler:10.1.0'
+    //textview font
+    implementation 'com.ctrlplusz.anytextview:library:1.2'
+
+    //Bottom Navigation
+    implementation 'com.eightbitlab:bottomnavigationbar:0.9.6'
+
 
 }
 apply plugin: 'com.google.gms.google-services'

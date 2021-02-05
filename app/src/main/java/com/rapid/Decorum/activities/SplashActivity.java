@@ -1,4 +1,4 @@
-package com.rapid.furnitureaugmentreal.activities;
+package com.rapid.Decorum.activities;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -9,11 +9,10 @@ import android.Manifest;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.os.Bundle;
-import android.widget.Toast;
 
-import com.rapid.furnitureaugmentreal.R;
-import com.rapid.furnitureaugmentreal.appConstants.AppConstants;
-import com.rapid.furnitureaugmentreal.preferencehelper.PreferenceHelper;
+import com.rapid.Decorum.R;
+import com.rapid.Decorum.appConstants.AppConstants;
+import com.rapid.Decorum.preferencehelper.PreferenceHelper;
 
 public class SplashActivity extends AppCompatActivity {
 

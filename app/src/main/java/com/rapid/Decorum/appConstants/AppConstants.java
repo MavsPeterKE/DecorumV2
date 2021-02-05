@@ -1,4 +1,4 @@
-package com.rapid.furnitureaugmentreal.appConstants;
+package com.rapid.Decorum.appConstants;
 
 public class AppConstants {
 

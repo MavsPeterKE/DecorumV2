@@ -1,4 +1,4 @@
-package com.rapid.furnitureaugmentreal;
+package com.rapid.Decorum;
 
 
 import android.os.Bundle;

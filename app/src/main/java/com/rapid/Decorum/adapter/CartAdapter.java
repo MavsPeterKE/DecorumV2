@@ -1,4 +1,4 @@
-package com.rapid.furnitureaugmentreal.adapter;
+package com.rapid.Decorum.adapter;
 
 import android.app.Activity;
 import android.content.Context;
@@ -27,10 +27,10 @@ import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.FirebaseFirestoreException;
 import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.StorageReference;
-import com.rapid.furnitureaugmentreal.R;
-import com.rapid.furnitureaugmentreal.activities.CartActivity;
-import com.rapid.furnitureaugmentreal.domain.Cart;
-import com.rapid.furnitureaugmentreal.progress.ProgressFragment;
+import com.rapid.Decorum.R;
+import com.rapid.Decorum.activities.CartActivity;
+import com.rapid.Decorum.domain.Cart;
+import com.rapid.Decorum.progress.ProgressFragment;
 
 import java.util.HashMap;
 import java.util.List;
@@ -214,11 +214,12 @@ public class CartAdapter extends RecyclerView.Adapter<CartAdapter.CartHolder> {
 
 
                     int qty = Integer.parseInt(carts.get(position).getQty());
-                    price = Double.parseDouble(logindata.get("price").toString()) *qty;
+                    //price = Double.parseDouble(logindata.get("price").toString()) *qty;
+                    price = 650;
 
                     // ((FoodCartActivity)context).setCartTotal(price);
 
-                    holder.txtPrice.setText(logindata.get("price").toString() + " Rs");
+                    holder.txtPrice.setText(" Ksh."+ logindata.get("price").toString());
 
 
 

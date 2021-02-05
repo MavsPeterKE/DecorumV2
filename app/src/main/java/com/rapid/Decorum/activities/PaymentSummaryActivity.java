@@ -1,17 +1,14 @@
-package com.rapid.furnitureaugmentreal.activities;
+package com.rapid.Decorum.activities;
 
 import androidx.annotation.NonNull;
-import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.AppCompatImageView;
 
-import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -24,10 +21,10 @@ import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.QueryDocumentSnapshot;
 import com.google.firebase.firestore.QuerySnapshot;
-import com.rapid.furnitureaugmentreal.R;
-import com.rapid.furnitureaugmentreal.appConstants.AppConstants;
-import com.rapid.furnitureaugmentreal.domain.Cart;
-import com.rapid.furnitureaugmentreal.preferencehelper.PreferenceHelper;
+import com.rapid.Decorum.R;
+import com.rapid.Decorum.appConstants.AppConstants;
+import com.rapid.Decorum.domain.Cart;
+import com.rapid.Decorum.preferencehelper.PreferenceHelper;
 
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
@@ -36,8 +33,6 @@ import java.util.Calendar;
 import java.util.Date;
 import java.util.HashMap;
 import java.util.Map;
-
-import io.opencensus.internal.Utils;
 
 public class PaymentSummaryActivity extends AppCompatActivity {
 

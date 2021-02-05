@@ -1,14 +1,11 @@
-package com.rapid.furnitureaugmentreal;
+package com.rapid.Decorum;
 
 
 import androidx.fragment.app.Fragment;
 
-import android.util.Log;
-
 import com.google.ar.core.Config;
 import com.google.ar.core.Session;
 import com.google.ar.sceneform.ux.ArFragment;
-import com.rapid.furnitureaugmentreal.activities.MainActivity;
 
 
 /**
